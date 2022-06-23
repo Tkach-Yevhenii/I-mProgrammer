@@ -144,7 +144,6 @@ body {
 }
 
 .header__main__item__subtitle {
-
 	opacity: .5;
 	font-weight: 400;
 	font-size: 12px;
@@ -160,12 +159,8 @@ body {
 	top: 35%;
 	width: 100%;
 	height: 100%;
-	overflow: scroll;
-	padding: 40px 30px 40px 30px;
-}
-
-.header__content::-webkit-scrollbar {
-	display: none;
+	overflow-y: scroll;
+	padding: 40px 30px 1000px 30px;
 }
 
 .header__content__bio {
@@ -193,6 +188,109 @@ body {
 	padding: 0px 0px 20px 0px;
 	border-bottom: .75px solid rgba(255, 255, 255, 0.372);
 }
+
+
+/* ========================================== */
+/* Header: Skills                             */
+/* ========================================== */
+
+.skills-bar {
+	position: relative;
+	width: 100%;
+	height: 100px;
+}
+
+.skills-bar .bar {
+	margin: 20px 0px 0px 0px;
+}
+
+.skills-bar .bar .info span {
+	color: #fff;
+	font-size: 12px;
+	font-weight: 600;
+	font-family: 'Raleway', sans-serif;
+	letter-spacing: 1px;
+}
+
+.skills-bar .bar .progress-line {
+	position: relative;
+	height: 3.5px;
+	width: 100%;
+	background-color: #3d4851;
+	margin: 10px 0px 0px 0px;
+	transform: scaleX(0);
+	transform-origin: left;
+	animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.progress-line span {
+	position: absolute;
+	height: 100%;
+	width: 80%;
+	background: #F9C808;
+	border-radius: 10px;
+	transform: scaleX(0);
+	transform-origin: left;
+	animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.bar .progress-line span::after {
+	position: absolute;
+	content: "80%";
+	right: 0;
+	top: -10px;
+	background: #3d4851;
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	padding: 1px 8px 1px 8px;
+	border-radius: 3px;
+	opacity: 0;
+	animation: showText 0.5s 1.5s linear forwards;
+}
+
+.progress-line.html span::after {
+	content: "90%";
+}
+
+.progress-line.css span::after {
+	content: "70%";
+}
+
+.progress-line.javascript span::after {
+	content: "40%";
+}
+
+.progress-line.csharp span::after {
+	content: "50%";
+}
+
+.progress-line.apsnet span::after {
+	content: "10%";
+}
+
+
+
+.progress-line.html span {
+	width: 90%;
+}
+
+.progress-line.css span {
+	width: 70%;
+}
+
+.progress-line.javascript span {
+	width: 40%;
+}
+
+.progress-line.csharp span: {
+	width: 50%;
+}
+
+.progress-line.apsnet span {
+	width: 30%;
+}
+
 
 /* ========================================== */
 /* Header: Footer                             */
@@ -326,5 +424,18 @@ body {
 	100% {
 		transform: scale(0.95);
 		box-shadow: 0 0 0 0 rgba(255, 121, 63, 0);
+	}
+}
+
+
+@keyframes animate {
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes showText {
+	100% {
+		opacity: 1;
 	}
 }
