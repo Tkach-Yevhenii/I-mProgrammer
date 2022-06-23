@@ -358,6 +358,7 @@ body {
 
 
 
+
 /* ========================================== */
 /* Header: Footer                             */
 /* ========================================== */
@@ -595,12 +596,14 @@ body {
 .page__section {
 	padding: 20px 0px 0px 0px;
 }
-.page__container {
-}
+
+.page__container {}
+
 .page__row {
 	display: flex;
 	justify-content: space-between;
 }
+
 .page__counter {
 	margin: 0px 20px 0px 0px;
 	font-family: 'Open Sans', sans-serif;
